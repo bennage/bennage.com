@@ -300,6 +300,94 @@ img {
 }
 
 /* ===========================
+   Drifting "bennage.com" text
+   =========================== */
+.drift-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.drift {
+  position: absolute;
+  white-space: nowrap;
+  font-family: var(--font-fun);
+  font-weight: 700;
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+/* Each instance has a unique size, color, vertical position, speed, and delay */
+.drift--1 {
+  font-size: clamp(3rem, 8vw, 6rem);
+  top: 12%;
+  color: rgba(232, 108, 58, 0.25);
+  animation: driftLTR 14s linear 2s infinite;
+}
+
+.drift--2 {
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  top: 55%;
+  color: rgba(255, 255, 255, 0.18);
+  animation: driftRTL 18s linear 7s infinite;
+}
+
+.drift--3 {
+  font-size: clamp(4rem, 12vw, 9rem);
+  top: 75%;
+  color: rgba(249, 168, 112, 0.15);
+  animation: driftLTR 22s linear 0s infinite;
+  transform: rotate(-5deg);
+}
+
+.drift--4 {
+  font-size: clamp(1rem, 3vw, 2rem);
+  top: 30%;
+  color: rgba(255, 255, 255, 0.22);
+  animation: driftRTL 11s linear 12s infinite;
+}
+
+.drift--5 {
+  font-size: clamp(2rem, 6vw, 4.5rem);
+  top: 88%;
+  color: rgba(232, 108, 58, 0.2);
+  animation: driftLTR 16s linear 5s infinite;
+  transform: rotate(3deg);
+}
+
+.drift--6 {
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  top: 42%;
+  color: rgba(255, 255, 255, 0.12);
+  animation: driftRTL 25s linear 15s infinite;
+  transform: rotate(-2deg);
+}
+
+.drift--7 {
+  font-size: clamp(1.2rem, 3.5vw, 2.5rem);
+  top: 5%;
+  color: rgba(249, 168, 112, 0.2);
+  animation: driftLTR 13s linear 9s infinite;
+  transform: rotate(6deg);
+}
+
+@keyframes driftLTR {
+  0%   { opacity: 0;   left: -30%; }
+  5%   { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { opacity: 0;   left: 110%; }
+}
+
+@keyframes driftRTL {
+  0%   { opacity: 0;   left: 110%; }
+  5%   { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { opacity: 0;   left: -30%; }
+}
+
+/* ===========================
    Fun Facts
    =========================== */
 .fun-facts {
